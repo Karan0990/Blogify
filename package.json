@@ -11,6 +11,10 @@
   "description": "",
   "dependencies": {
     "bootstrap": "^5.3.7",
+<<<<<<< HEAD
+=======
+    "cloudinary": "^1.41.3",
+>>>>>>> 2a3cb71 (feat: integrate Cloudinary storage for image uploads)
     "cookie-parser": "^1.4.7",
     "cookieparser": "^0.1.0",
     "dotenv": "^17.0.1",
@@ -18,9 +22,18 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.1",
+<<<<<<< HEAD
     "multer": "^2.0.1"
+=======
+    "multer": "^2.0.1",
+    "multer-storage-cloudinary": "^4.0.0"
+>>>>>>> 2a3cb71 (feat: integrate Cloudinary storage for image uploads)
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2a3cb71 (feat: integrate Cloudinary storage for image uploads)

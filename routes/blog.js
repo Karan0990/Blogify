@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const { handleCreateBlog, handelBodyOfBlog, handelComment } = require("../controllers/blog");
 const multer = require("multer");
+<<<<<<< HEAD
 const path = require("path")
 
 const storage = multer.diskStorage({
@@ -12,6 +13,20 @@ const storage = multer.diskStorage({
         cb(null, fileName);
     }
 })
+=======
+const path = require("path");
+const { storage } = require("../utils/cloudinary/cloud");
+
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, path.resolve(`./public/uploads/`))
+//     },
+//     filename: function (req, file, cb) {
+//         const fileName = `${Date.now()} + ${file.originalname}`;
+//         cb(null, fileName);
+//     }
+// })
+>>>>>>> 2a3cb71 (feat: integrate Cloudinary storage for image uploads)
 
 const upload = multer({ storage: storage })
 
