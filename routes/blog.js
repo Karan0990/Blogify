@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
         cb(null, fileName);
     }
 })
-const path = require("path");
+
 const { storage } = require("../utils/cloudinary/cloud");
 
 // const storage = multer.diskStorage({
