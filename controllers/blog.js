@@ -9,7 +9,7 @@ async function handleCreateBlog(req, res) {
     const blog = await Blog.create({
         tittle,
         body,
-        coverImageUrl: `/uploads/${req.file.filename}`,
+        coverImageUrl: req.file.path,
         createdBy: req.user._id,
     })
 
