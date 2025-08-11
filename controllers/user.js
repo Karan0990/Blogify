@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Blog = require("../models/blog");
 const { verifyToken } = require("../services/authentication")
 
 async function handleCreateUser(req, res) {
@@ -32,4 +33,14 @@ async function userLogout(req, res) {
 
 }
 
-module.exports = { handleCreateUser, handleSigninUser, userLogout }
+
+async function userProfile(req, res) {
+
+    const blog = await Blog.find({ createdBy: req.user._id });
+
+
+
+    return res.render("profile", { user: req.user, blogs: blog })
+}
+
+module.exports = { handleCreateUser, handleSigninUser, userLogout, userProfile }

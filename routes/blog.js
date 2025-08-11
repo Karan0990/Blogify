@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { handleCreateBlog, handelBodyOfBlog, handelComment } = require("../controllers/blog");
+const { handleCreateBlog, handelBodyOfBlog, handelComment, deleteBlog } = require("../controllers/blog");
 const multer = require("multer");
 const path = require("path")
 
@@ -45,6 +45,6 @@ blogRouter.get("/:id", handelBodyOfBlog),
     blogRouter.post("/comment/:id", handelComment)
 
 
-
+blogRouter.get("/delete/:id", deleteBlog)
 
 module.exports = blogRouter;

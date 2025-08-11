@@ -33,6 +33,11 @@ const userSchema = new Schema({
         default: "User",
     },
 
+    blogs: {
+        type: Schema.Types.ObjectId,
+        ref: "blog"
+    }
+
 
 
 }, { timestamps: true })

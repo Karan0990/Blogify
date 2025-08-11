@@ -41,4 +41,16 @@ async function handelComment(req, res) {
 
 }
 
-module.exports = { handleCreateBlog, handelBodyOfBlog, handelComment };
+async function deleteBlog(req, res) {
+    const blog = await Blog.findById(req.params.id).populate("createdBy");
+
+    if (!blog) {
+        return res.status(404).send("Blog not found");
+    }
+
+    await Blog.deleteOne({ _id: blog._id });
+    res.redirect("/user/profile");
+
+}
+
+module.exports = { handleCreateBlog, handelBodyOfBlog, handelComment, deleteBlog };

@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const { handleCreateUser, handleSigninUser, userLogout } = require("../controllers/user")
+const { handleCreateUser, handleSigninUser, userLogout, userProfile } = require("../controllers/user")
 
 const userRouter = new Router();
 
@@ -16,6 +16,8 @@ userRouter.get("/signup", (req, res) => {
 userRouter.post("/signup", handleCreateUser);
 
 userRouter.post("/signin", handleSigninUser);
+
+userRouter.get("/profile", userProfile)
 
 userRouter.get("/logout", userLogout);
 
